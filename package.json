@@ -3,10 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@types/node": "^17.0.18",
+    "@types/react": "^17.0.39",
+    "@types/react-dom": "^17.0.11",
     "cra-template-typescript": "1.1.3",
+    "pdfjs-dist": "^2.13.216",
+    "print-js": "^1.6.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
-    "react-scripts": "5.0.0"
+    "react-scripts": "5.0.0",
+    "typescript": "^4.6.3"
   },
   "scripts": {
     "start": "react-scripts start",
