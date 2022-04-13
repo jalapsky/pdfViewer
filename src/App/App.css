@@ -118,6 +118,15 @@
     margin: 0;
 }
 
+
+.scale {
+    padding: .2rem;
+    background-color: #434d57;
+    font-size: 15px;
+    color: white;
+}
+
+
 .arrowRepeat{
     animation-name: spin;
     animation-duration: 2000ms;

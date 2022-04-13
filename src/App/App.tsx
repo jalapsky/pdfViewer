@@ -199,7 +199,7 @@ export default class App extends React.Component<PDFViewerMainClassPropsTypes, P
                         >
                             <Icons />
                         </button>
-                        <div>
+                        <div className="scale">
                             {Math.round(scale * 33)}%/100%
                         </div>
                     </div>
