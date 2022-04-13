@@ -1,5 +1,4 @@
 .pdfViewerTools{
-    height: 3rem;
     background-color: #34495e;
     width: 400px;
     border-radius: 20px;
@@ -8,7 +7,7 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-    padding: 1rem;
+    padding: .5rem;
 }
 
 .shadowDocument{
@@ -81,6 +80,21 @@
     -moz-box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.6);
     box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.6);
 }
+
+
+.panelButton{
+    border-radius: 25px;
+    background-color: white;
+    border: none;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 0;
+}
+
 
 canvas {
     display: block;

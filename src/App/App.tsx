@@ -3,7 +3,7 @@ import {PdfViewer} from "./Viewer";
 import * as pdfjsLib from "pdfjs-dist";
 import printJS from "print-js";
 import {PDFViewerMainClassPropsTypes, PDFViewerMainClassStateTypes} from "./types/PDFViewerTypes";
-import {DownloadIcon, PrintIcon} from "./Icons/DownloadIcon";
+import {DownloadIcon, MinusIcon, PlusIcon, PrintIcon} from "./Icons/DownloadIcon";
 import './App.css';
 
 //@ts-ignore
@@ -161,30 +161,36 @@ export default class App extends React.Component<PDFViewerMainClassPropsTypes, P
             return(
                 <div>
                     <div className="pdfViewerTools" style={{position: 'fixed'}}>
-                        {/*<button*/}
-                        {/*    shape="circle"*/}
-                        {/*    icon={<ZoomInOutlined/>}*/}
-                        {/*    onClick={() => this.increaseScale()}*/}
-                        {/*/>*/}
-                        {/*<button*/}
-                        {/*    shape="circle"*/}
-                        {/*    icon={<ZoomOutOutlined/>}*/}
-                        {/*    onClick={() => this.reduceScale()}*/}
-                        {/*/>*/}
+                        <button
+                            // shape="circle"
+                            // icon={<ZoomInOutlined/>}
+                            onClick={() => this.increaseScale()}
+                            className={"panelButton"}
+                        >
+                            <PlusIcon />
+                        </button>
+                        <button
+                            // shape="circle"
+                            // icon={<ZoomOutOutlined/>}
+                            onClick={() => this.reduceScale()}
+                            className={"panelButton"}
+                        >
+                            <MinusIcon />
+                        </button>
                         <button
                             // shape="circle"
                             // icon={<PrintIcon/>}
                             onClick={() => this.printDocument()}
+                            className={"panelButton"}
                         >
-                            Печать
                             <PrintIcon />
                         </button>
                         <button
                             // shape="circle"
                             // icon={<DownloadIcon/>}
                             onClick={() => this.downloadDocument()}
+                            className={"panelButton"}
                         >
-                            Скачать
                             <DownloadIcon />
                         </button>
                         <div>
