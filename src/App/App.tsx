@@ -3,7 +3,7 @@ import {PdfViewer} from "./Viewer";
 import * as pdfjsLib from "pdfjs-dist";
 import printJS from "print-js";
 import {PDFViewerMainClassPropsTypes, PDFViewerMainClassStateTypes} from "./types/PDFViewerTypes";
-import {DownloadIcon, MinusIcon, PlusIcon, PrintIcon} from "./Icons/DownloadIcon";
+import {ArrowRepeat, Icons, MinusIcon, PlusIcon, PrintIcon} from "./Icons/Icons";
 import './App.css';
 
 //@ts-ignore
@@ -53,7 +53,6 @@ export default class App extends React.Component<PDFViewerMainClassPropsTypes, P
                 //pdf - документа
                 //numPages - количество страниц
                 //numPagesArr - массив с коллекцией страниц
-                //@ts-ignore
                 this.setState({pdf: loadedPdf, numPages: loadedPdf.numPages, numPagesArr: numPagesArr}, () => {
                     //После того как все значения улетели в state, (Асинхронно), вешаем прослушку  колеса мыши
                     //на div в котором будет отрисовываться документа и вызываем метод onWheelEvent
@@ -140,16 +139,23 @@ export default class App extends React.Component<PDFViewerMainClassPropsTypes, P
             .catch(error => console.log('error', error));
     }
 
-
+    loadingDocument = () => {
+        return(
+            <div className="loadingPage">
+                <div className="loadingPage__div">
+                    <ArrowRepeat />
+                    <p>Loading</p>
+                </div>
+            </div>
+        )
+    }
 
     render() {
         const {pdf, scale, isRender, isLoadingError} = this.state;
 
         if(!pdf && !isLoadingError){
             return (
-                <div className="example">
-                    Загрузка...
-                </div>
+                this.loadingDocument()
             )
         } else if(!pdf && isLoadingError){
             return (
@@ -187,11 +193,11 @@ export default class App extends React.Component<PDFViewerMainClassPropsTypes, P
                         </button>
                         <button
                             // shape="circle"
-                            // icon={<DownloadIcon/>}
+                            // icon={<Icons/>}
                             onClick={() => this.downloadDocument()}
                             className={"panelButton"}
                         >
-                            <DownloadIcon />
+                            <Icons />
                         </button>
                         <div>
                             {Math.round(scale * 33)}%/100%
